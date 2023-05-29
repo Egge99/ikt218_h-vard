@@ -1,4 +1,5 @@
 #include "gdt.h"
+#include "idt.h"
 
 // Define entry point in asm to prevent C++ mangling
 extern "C"{
@@ -19,6 +20,8 @@ void kernel_main()
     clear_terminal();
 
     print_string("Hello World!", VGA_COLOR, 0, 0);
+
+    idt_init();
 }
 
 
