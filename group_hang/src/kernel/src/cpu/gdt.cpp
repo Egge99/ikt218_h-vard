@@ -54,23 +54,6 @@ void gdt_set_gate(int num, unsigned long base, unsigned long limit, unsigned cha
     gdt[num].access = access;
 }
 
-// extern void print_string(const char* str, uint8_t color, int x, int y);
-// extern void print(const char *format, ...);
-
-//void print_gdt() {
-    //print_string("GDT:\n", VGA_COLOR, 0, 0);
-    // print("GDT:\n");
-
-    //for (int i = 0; i < 3; i++) {
-    //    print_string("Entry %d: Limit: %u, Base: %u\n", i, gdt[i].limit_low, gdt[i].base_low, VGA_COLOR, 0, i+1);
-        // print("Entry %d: Limit: %u, Base: %u\n", i, gdt[i].limit_low, gdt[i].base_low);
-    //}
-
-    // print_string("GDT Limit: %u, GDT Base: %u\n", gp.limit, gp.base, VGA_COLOR, 0, 5);
-    //print("GDT Limit: %u, GDT Base: %u\n", gp.limit, gp.base);
-//}
-
-
 /* Should be called by main. This will setup the special GDT
 *  pointer, set up the first 3 entries in our GDT, and then
 *  finally call gdt_flush() in our assembler file in order
@@ -101,12 +84,5 @@ void gdt_install()
     gdt_flush();
 
     reload_segments();
-
-    // print_gdt();
 }
 
-
-
-
-
-// printf skal inn i system c, (finne system h)

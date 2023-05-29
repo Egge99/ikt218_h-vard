@@ -7,6 +7,7 @@ extern "C"{
 
 extern void gdt_install();
 
+extern void clear_terminal();
 
 extern void print_string(const char* str, uint8_t color, int x, int y);
 
@@ -15,8 +16,9 @@ void kernel_main()
 {
     gdt_install();
 
+    clear_terminal();
+
     print_string("Hello World!", VGA_COLOR, 0, 0);
-    
 }
 
 
